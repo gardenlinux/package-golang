@@ -1,1 +1,2 @@
-apt_src golang-1.22
+git_src --branch debian/1.22.4-1 https://salsa.debian.org/go-team/compiler/golang.git
+version_suffix=gardenlinux0+bp1443
