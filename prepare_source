@@ -1,2 +1,2 @@
-apt_src golang-1.22
-version_suffix=gl0
+git_src --branch debian/1.22.9-2 https://salsa.debian.org/go-team/compiler/golang.git
+version_suffix=gl0~bp1592
