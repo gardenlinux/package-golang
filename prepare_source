@@ -1,1 +1,2 @@
 apt_src golang-1.23
+version_suffix=gl0
