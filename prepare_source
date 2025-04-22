@@ -1,2 +1,2 @@
-git_src --branch debian/1.23.6-4 https://salsa.debian.org/go-team/compiler/golang.git
+git_src --branch debian/1.23.8-1 https://salsa.debian.org/go-team/compiler/golang.git
 version_suffix=gl0~bp1592
