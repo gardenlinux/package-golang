@@ -1,2 +1,15 @@
-git_src --branch debian/1.23.8-1 https://salsa.debian.org/go-team/compiler/golang.git
-version_suffix=gl0~bp1592
+
+apt-get -y build-dep golang-go golang-1.22
+
+version_orig=1.24.4
+version="$version_orig-1"
+
+BOOTSTRAP=$(mktemp -d)
+git clone --branch debian/1.22.12-3 https://salsa.debian.org/go-team/compiler/golang.git $BOOTSTRAP
+pushd $BOOTSTRAP
+DEB_BUILD_OPTIONS="nocheck" DEB_BUILD_PROFILES="nocheck" dpkg-buildpackage --no-check-builddeps --no-sign --build=binary
+apt install -y ../golang-1.22*.deb
+popd
+
+git_src --branch debian/$version https://salsa.debian.org/go-team/compiler/golang.git
+# version_suffix=gl0~bp1592
