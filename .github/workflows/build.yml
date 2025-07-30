@@ -9,3 +9,6 @@ jobs:
     with:
       release: ${{ github.ref == 'refs/heads/main' }}
       force-arm-build: true
+      # go 1.24.4 needs go > 1.22.5 for building, but in our container we only get go 1.22.5
+      # This is why we need to use a pre-existing newer release here as a build dependency
+      build_dep: gardenlinux/package-golang 1.23.8-1gl0+bp1592
