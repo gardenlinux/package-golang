@@ -1,20 +1,6 @@
-pkg="golang-1.24"
-debian_version="1.24.4-1"
-version_orig="1.24.5"
+pkg=golang
+version_orig=1.24.4
 version="$version_orig-1"
+git_src -b "debian/$version" https://salsa.debian.org/go-team/compiler/golang.git
 
 version_suffix=gl0+bp1877
-
-DEBIAN_SRC=$(mktemp -d)
-git clone -b "debian/$debian_version" --depth=1 https://salsa.debian.org/go-team/compiler/golang.git $DEBIAN_SRC
-pushd $DEBIAN_SRC
-git sparse-checkout set debian
-popd
-
-GOLANG_SRC=$(mktemp -d)
-git clone -b "go$version_orig" https://go.googlesource.com/go "$GOLANG_SRC"
-tar -cf "$dir/orig.tar" -C "$GOLANG_SRC" .
-rm -fR "$GOLANG_SRC"
-
-cp -rp "$DEBIAN_SRC/debian" "$dir/src/"
-rm -fR "$DEBIAN_SRC"
