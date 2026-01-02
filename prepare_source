@@ -1,4 +1,4 @@
-version_orig=1.25.3-1
+version_orig=1.25.3
 version="$version_orig-1"
 
 git_src --branch debian/$version https://salsa.debian.org/go-team/compiler/golang.git
