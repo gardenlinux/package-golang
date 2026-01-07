@@ -1,5 +1,8 @@
-version_orig=1.24.4
+version_orig=1.24.9
 version="$version_orig-1"
 
 git_src --branch debian/$version https://salsa.debian.org/go-team/compiler/golang.git
+
+import_upstream_patches
+
 version_suffix=gl0~bp1592
