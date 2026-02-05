@@ -1,8 +1,7 @@
 pkg=golang
-version_orig=1.24.9
+version_orig=1.24.12
 version="$version_orig-1"
 git_src -b "debian/$version" "https://salsa.debian.org/go-team/compiler/golang.git"
 
 version_suffix=gl0~bp1877
 
-import_upstream_patches
