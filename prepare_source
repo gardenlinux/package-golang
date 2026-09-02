@@ -1,5 +1,5 @@
 pkg=golang
-version_orig=1.26.5
+version_orig=1.26.7
 version="$version_orig-1"
 git_src -b "debian/$version" "https://salsa.debian.org/go-team/compiler/golang.git"
 
